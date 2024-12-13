@@ -1,13 +1,28 @@
 # https://leetcode.com/problems/valid-anagram/
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        len_s = len(s)
-        if len_s != len(t):
+        """
+        Determines if two strings are anagrams of each other.
+
+        Args:
+            s (str): The first string.
+            t (str): The second string.
+
+        Returns:
+            bool: True if the strings are anagrams, False otherwise.
+
+        Example:
+            >>> Solution.isAnagram("anagram", "nagaram")
+            True
+            >>> Solution.isAnagram("rat", "car")
+            False
+        """
+        if len(s) != len(t):
             return False
 
         count = {}
-        for i in range(len_s):
-            count[s[i]] = count.get(s[i], 0) + 1
-            count[t[i]] = count.get(t[i], 0) - 1
+        for char_s, char_t in zip(s, t):
+            count[char_s] = count.get(char_s, 0) + 1
+            count[char_t] = count.get(char_t, 0) - 1
 
-        return not any(val != 0 for val in count.values())
+        return all(val == 0 for val in count.values())
