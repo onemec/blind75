@@ -5,7 +5,7 @@ from typing import List
 class Solution:
     def encode(self, strs: List[str]) -> str:
         """
-        Encodes a list of strings to a single string.
+        Encode a list of strings to a single string.
 
         Args:
             strs (List[str]): A list of strings to be encoded.
@@ -21,7 +21,7 @@ class Solution:
         """
         if not strs:
             return ""
-        return ','.join(str(len(s)) for s in strs) + "#" + ''.join(strs)
+        return ",".join(str(len(s)) for s in strs) + "#" + "".join(strs)
 
     def decode(self, s: str) -> List[str]:
         """
@@ -41,10 +41,10 @@ class Solution:
         """
         if not s:
             return []
-        i = s.find('#') + 1
+        i = s.find("#") + 1
         resp = []
-        for num_str in s[:i - 1].split(','):
+        for num_str in s[: i - 1].split(","):
             str_len = int(num_str)
-            resp.append(s[i:i + str_len])
+            resp.append(s[i : i + str_len])
             i += str_len
         return resp

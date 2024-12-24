@@ -5,7 +5,7 @@ from typing import List
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         """
-        Finds two numbers in the list that add up to the target.
+        Find two numbers in the list that add up to the target.
 
         Args:
             nums (List[int]): A list of integers.

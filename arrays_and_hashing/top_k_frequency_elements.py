@@ -1,12 +1,12 @@
 # https://leetcode.com/problems/top-k-frequent-elements/
-from typing import List
 from collections import Counter
+from typing import List
 
 
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         """
-        Finds the k most frequent elements in the input list.
+        Find the k most frequent elements in the input list.
 
         Args:
             nums (List[int]): A list of integers.

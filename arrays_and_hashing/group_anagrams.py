@@ -6,7 +6,7 @@ from typing import List
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         """
-        Groups a list of strings into anagrams.
+        Group a list of strings into anagrams.
 
         Args:
             strs (List[str]): A list of strings to be grouped.

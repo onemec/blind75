@@ -2,7 +2,7 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         """
-        Determines if two strings are anagrams of each other.
+        Determine if two strings are anagrams of each other.
 
         Args:
             s (str): The first string.

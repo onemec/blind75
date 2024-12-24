@@ -5,7 +5,7 @@ from typing import List
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         """
-        Checks if the input list contains any duplicates.
+        Check if the input list contains any duplicates.
 
         Args:
             nums (List[int]): A list of integers.
