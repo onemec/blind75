@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/product-of-array-except-self/submissions/1487062336/
+# https://leetcode.com/problems/product-of-array-except-self/
 from typing import List
 
 

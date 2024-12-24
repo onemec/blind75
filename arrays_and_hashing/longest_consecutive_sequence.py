@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/longest-consecutive-sequence/description/
+# https://leetcode.com/problems/longest-consecutive-sequence/
 from collections import defaultdict
 from typing import List
 
