@@ -2,7 +2,7 @@
 name = "blind75"
 version = "0.0.1"
 description = "This is a repository with my (occasionally AI-aided) blind75 solutions."
-authors = [{ name = "Oliver Nemec", email = "onemec@onemec.org" }]
+authors = [{ name = "Oliver Nemec", email = "oliver@onemec.org" }]
 readme = "README.md"
 keywords = ['python']
 requires-python = ">=3.9,<4.0"
