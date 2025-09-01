@@ -3,21 +3,28 @@
 
 class Solution:
     def isValidSudoku(self, board: list[list[str]]) -> bool:
-        # Let's consider the sub-boxes to be labeled 1 thru 9
-        sub_boxes_seen = [set() for _ in range(9)]
-        # Same for rows and columns
-        rows_seen = [set() for _ in range(9)]
-        cols_seen = [set() for _ in range(9)]
-        for row_i, row in enumerate(board):
-            for col_j, num in enumerate(row):
-                # Skip non-numbers
-                if num == ".":
-                    continue
-                # Add the current number to the row/col/sub-box:
-                sub_box_index = col_j // 3 + 3 * (row_i // 3)
-                if any(num in s for s in [rows_seen[row_i], cols_seen[col_j], sub_boxes_seen[sub_box_index]]):
+        # Bitmasks for digits seen in each row, column, and 3x3 sub-box
+        row_masks = [0] * 9
+        col_masks = [0] * 9
+        box_masks = [0] * 9
+
+        for row in range(9):
+            for col in range(9):
+                cell = board[row][col]
+                if cell == ".":
+                    continue  # Skip empty cells
+
+                # Map digit '1'-'9' → bit positions 0-8
+                digit_bit = 1 << (ord(cell) - ord("1"))
+                # Identify which 3x3 sub-box this cell belongs to
+                box_index = (row // 3) * 3 + (col // 3)
+
+                # If digit already seen in the row, column, or sub-box → invalid
+                if row_masks[row] & digit_bit or col_masks[col] & digit_bit or box_masks[box_index] & digit_bit:
                     return False
-                rows_seen[row_i].add(num)
-                cols_seen[col_j].add(num)
-                sub_boxes_seen[sub_box_index].add(num)
+
+                # Mark digit as seen in this row, column, and sub-box
+                row_masks[row] |= digit_bit
+                col_masks[col] |= digit_bit
+                box_masks[box_index] |= digit_bit
         return True
